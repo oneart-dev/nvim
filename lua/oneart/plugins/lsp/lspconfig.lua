@@ -95,6 +95,18 @@ return {
 			},
 		})
 
+		-- configure volar (vue) server
+		lspconfig["volar"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "vue" },
+			init_options = {
+				typescript = {
+					tsdk = "/opt/homebrew/lib/node_modules/typescript/lib",
+				},
+			},
+		})
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
@@ -105,6 +117,7 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			-- filetypes = { "javascript", "vue", "typescriptreact", "javascriptreact" },
 		})
 
 		-- configure css server
