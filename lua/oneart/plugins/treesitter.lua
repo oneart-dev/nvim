@@ -2,12 +2,10 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	event = { "BufReadPre", "BufNewFile" },
-  dependancy = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    "nvim-treesitter/nvim-treesitter-refactor",
-    -- "nvim-treesitter/nvim-treesitter-rainbow",
-  },
-      nvim-treesitter/nvim-treesitter-textobjects
+	dependancy = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		-- "nvim-treesitter/nvim-treesitter-refactor",
+	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
@@ -37,11 +35,9 @@ return {
 			},
 			highlight = {
 				enable = true,
-				disable = {},
 			},
 			indent = {
 				enable = true,
-				disable = {},
 			},
 			incremental_selection = {
 				enable = true,
@@ -52,36 +48,24 @@ return {
 					node_decremental = "<bs>",
 				},
 			},
-			refactor = {
-				highlight_definitions = {
-					enable = true,
-					disable = {},
-				},
-				highlight_current_scope = {
-					enable = true,
-					disable = {},
-				},
-				smart_rename = {
-					enable = true,
-					disable = {},
-				},
-				navigation = {
-					enable = true,
-					disable = {},
-				},
-			},
-			textobjects = {
-				enable = true,
-				disable = {},
-			},
-			playground = {
-				enable = true,
-				disable = {},
-			},
-			rainbow = {
-				enable = true,
-				disable = {},
-			},
+			-- refactor = {
+			-- 	highlight_definitions = {
+			-- 		enable = true,
+			-- 		disable = {},
+			-- 	},
+			-- 	highlight_current_scope = {
+			-- 		enable = true,
+			-- 		disable = {},
+			-- 	},
+			-- 	smart_rename = {
+			-- 		enable = true,
+			-- 		disable = {},
+			-- 	},
+			-- 	navigation = {
+			-- 		enable = true,
+			-- 		disable = {},
+			-- 	},
+			-- },
 		})
 	end,
 }
