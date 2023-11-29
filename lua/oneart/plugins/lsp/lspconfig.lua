@@ -95,6 +95,12 @@ return {
 			},
 		})
 
+		lspconfig["marksman"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "md", "markdown" },
+		})
+
 		-- configure volar (vue) server
 		lspconfig["volar"].setup({
 			capabilities = capabilities,
