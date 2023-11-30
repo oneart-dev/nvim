@@ -4,10 +4,14 @@ return {
 	config = function()
 		local nnp = require("no-neck-pain")
 		nnp.setup({
+			width = 105,
 			autocmds = {
 				enableOnVimEnter = true,
 			},
 			buffers = {
+				left = {
+					enabled = false,
+				},
 				colors = {
 					blend = 0.1,
 				},
@@ -17,7 +21,7 @@ return {
 					enabled = true,
 					-- set to `nil` to default
 					-- to current working directory
-					location = "~/Documents/",
+					location = "~/.config/nvim/scratchpad",
 				},
 				bo = {
 					filetype = "md",
