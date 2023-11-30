@@ -1,6 +1,10 @@
 | Cmd           | Desc           |
 | ------------- | -------------- |
+| <leader>hl    | harpoon toggle |
+| <leader>hm    | harpoon add    |
+| ------------- | -------------- |
 | <leader>md    | prettier md    |
+| <leader>mp    | format         |
 | <leader>g     | neogit         |
 | gcc           | comment        |
 | ------------- | -------------- |
@@ -19,7 +23,7 @@
 | `<leader>F`   | format         |
 | `<leader>+`   | increment      |
 | `<leader>-`   | decrement      |
-| ------------- | ------------   |
+| ------------- | ----------     |
 | `gR`          | Show refs      |
 | `gD`          | Go to decl     |
 | `gd`          | Show defs      |
