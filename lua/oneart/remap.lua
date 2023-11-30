@@ -25,3 +25,5 @@ vim.keymap.set("n", "D", '"_D', { desc = "Delete without overwriting clipboard" 
 
 vim.keymap.set("n", "<leader>md", "vip:'<,'>!prettier --parser markdown<cr>", { desc = "format markdown" })
 vim.keymap.set("v", "<leader>md", ":'<,'>!prettier --parser markdown<cr>", { desc = "format markdown" })
+
+vim.keymap.set("n", "<leader>g", ":Neogit<CR>", { desc = "Open Neogit" })

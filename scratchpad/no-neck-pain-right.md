@@ -1,6 +1,7 @@
 | Cmd           | Desc           |
 | ------------- | -------------- |
 | <leader>md    | prettier md    |
+| <leader>g     | neogit         |
 | gcc           | comment        |
 | ------------- | -------------- |
 | `ysiw)`       | surround       |
@@ -32,5 +33,3 @@
 | `]d`          | Next diag      |
 | `K`           | Show doc       |
 | `<leader>rs`  | Restart LSP    |
-
-
