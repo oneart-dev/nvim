@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current spli
 vim.keymap.set("v", "<leader>jq", ":'<,'>!jq", { desc = "Run on selected lines JQ cmd" })
 
 vim.keymap.set("n", "<leader>F", "gggqG", { desc = "format file" }) -- format file
+vim.keymap.set("v", "<leader>F", "gq", { desc = "format file" }) -- format file
 
 vim.keymap.set("n", "x", '"_x', { desc = "Delete without overwriting clipboard" }) -- delete without overwriting clipboard
 vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without overwriting clipboard" }) -- delete without overwriting clipboard
