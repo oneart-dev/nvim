@@ -1,10 +1,11 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = true,
+	lazy = false,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	config = function()
 		local conform = require("conform")
 		conform.setup({
+			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
 				go = { "golines", "gofmt" },
 				javascript = { "prettier" },
@@ -13,6 +14,7 @@ return {
 				typescriptreact = { "prettier" },
 				svelte = { "prettier" },
 				css = { "prettier" },
+				vue = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
@@ -24,8 +26,13 @@ return {
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 10000,
 			},
+			-- formatters = {
+			-- 	prettier = {
+			-- 		prepend_args = { "--print-width", "80" },
+			-- 	},
+			-- },
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()

@@ -73,17 +73,7 @@ return {
 		-- configure go server
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
-			-- on_attach = on_attach,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-
-				-- vim.api.nvim_create_autocmd("BufWritePost", {
-				--   pattern = { "*.go" },
-				--   callback = function(ctx)
-				--       GoLines()
-				--   end,
-				-- })
-			end,
+			on_attach = on_attach,
 			settings = {
 				gopls = {
 					analyses = {
@@ -108,7 +98,31 @@ return {
 			filetypes = { "vue" },
 			init_options = {
 				typescript = {
-					tsdk = "/opt/homebrew/lib/node_modules/typescript/lib",
+					tsdk = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+				},
+				preferences = {
+					disableSuggestions = true,
+				},
+				languageFeatures = {
+					implementation = true,
+					references = true,
+					definition = true,
+					typeDefinition = true,
+					callHierarchy = true,
+					hover = true,
+					rename = true,
+					renameFileRefactoring = true,
+					signatureHelp = true,
+					codeAction = true,
+					workspaceSymbol = true,
+					diagnostics = true,
+					semanticTokens = true,
+					completion = {
+						defaultTagNameCase = "both",
+						defaultAttrNameCase = "kebabCase",
+						getDocumentNameCasesRequest = false,
+						getDocumentSelectionRequest = false,
+					},
 				},
 			},
 		})
@@ -130,6 +144,26 @@ return {
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = { -- custom settings for lua
+				less = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				scss = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
 		})
 
 		-- configure tailwindcss server

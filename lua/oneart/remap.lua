@@ -28,3 +28,9 @@ vim.keymap.set("n", "<leader>md", "vip:'<,'>!prettier --parser markdown<cr>", { 
 vim.keymap.set("v", "<leader>md", ":'<,'>!prettier --parser markdown<cr>", { desc = "format markdown" })
 
 vim.keymap.set("n", "<leader>g", ":Neogit<CR>", { desc = "Open Neogit" })
+
+-- navigate in insert mode
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right" })

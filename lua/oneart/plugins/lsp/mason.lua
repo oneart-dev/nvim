@@ -49,7 +49,7 @@ return {
 			ensure_installed = {
 				-- "gofmt",
 				-- "golint",
-				-- "golines",
+			-- "golines",
 				-- "goimports_reviser",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
