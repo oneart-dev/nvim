@@ -1,5 +1,10 @@
 | Cmd           | Desc           |
 | ------------- | -------------- |
+| %             | toggle bracket |
+| \_ $          | start/end line |
+| ci(           | (replace in)   |
+| vi(           | (select in)    |
+| gv            | select again   |
 | <leader>hl    | harpoon toggle |
 | <leader>hm    | harpoon add    |
 | ------------- | -------------- |
