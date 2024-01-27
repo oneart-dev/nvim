@@ -6,10 +6,16 @@
 | vi(           | (select in)      |
 | vat (press o) | html tag select  |
 | vit (press o) | html tag inside  |
+| yaw           | yank a word      |
+| daw           | delete a word    |
+| gf / gF       | go to file       |
 | ViB           | funtion select   |
 | dap           | del around parag |
 | gv            | select again     |
+| >> / <<       | (in)dent         |
+| cap           | cut paragraph    |
 | <leader>hl    | harpoon toggle   |
+| cc            | replace line     |
 | <leader>hm    | harpoon add      |
 | ------------- | --------------   |
 | <leader>md    | prettier md      |

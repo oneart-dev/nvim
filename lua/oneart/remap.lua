@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>ee", vim.cmd.Ex)
 
 vim.keymap.set("v", "p", '"_dP', { desc = "Copy without overwriting clipboard" }) -- copy without overwriting clipboard
 
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Close" })
+vim.keymap.set("n", "<leader>Q", ":!q<CR>", { desc = "Close" })
 
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
@@ -34,3 +36,8 @@ vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
+
+vim.keymap.set("n", "J", ":m -2<cr>", { desc = "Move line up" })
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+vim.keymap.set("n", "K", ":m +1<cr>", { desc = "Move line down" })
+vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv", { desc = "Move line up" })

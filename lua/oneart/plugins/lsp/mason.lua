@@ -32,6 +32,7 @@ return {
 				"volar",
 				"tsserver",
 				"html",
+        "clangd",
 				"cssls",
 				"tailwindcss",
 				-- "svelte",
