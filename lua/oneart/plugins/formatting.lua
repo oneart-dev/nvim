@@ -28,11 +28,6 @@ return {
 				async = false,
 				timeout_ms = 10000,
 			},
-			-- formatters = {
-			-- 	prettier = {
-			-- 		prepend_args = { "--print-width", "80" },
-			-- 	},
-			-- },
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()

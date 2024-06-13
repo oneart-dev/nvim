@@ -20,8 +20,9 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
+			preselect = "none",
 			completion = {
-				completeopt = "menu,menuone,preview,noselect",
+				completeopt = "menu,menuone,noinsert,noselect",
 			},
 			snippet = { -- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)

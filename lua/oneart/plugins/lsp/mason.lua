@@ -32,7 +32,7 @@ return {
 				"volar",
 				"tsserver",
 				"html",
-        "clangd",
+				"clangd",
 				"cssls",
 				"tailwindcss",
 				-- "svelte",
@@ -50,9 +50,10 @@ return {
 			ensure_installed = {
 				-- "gofmt",
 				-- "golint",
-			-- "golines",
+				-- "golines",
 				-- "goimports_reviser",
 				"prettier", -- prettier formatter
+				"eslint_d", -- eslint linter
 				"stylua", -- lua formatter
 				-- "isort", -- python formatter
 				"black", -- python formatter

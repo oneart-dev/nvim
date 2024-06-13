@@ -41,3 +41,5 @@ vim.keymap.set("n", "J", ":m -2<cr>", { desc = "Move line up" })
 vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("n", "K", ":m +1<cr>", { desc = "Move line down" })
 vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+
+vim.keymap.set("n", "T", ":!bash tmux.sh<cr>", { desc = "run tmux.sh file" })
