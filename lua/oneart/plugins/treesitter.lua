@@ -9,10 +9,12 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
+				"vimdoc",
 				"bash",
 				"c",
 				"cpp",
 				"css",
+				"scss",
 				"dockerfile",
 				"go",
 				"gomod",
@@ -32,6 +34,7 @@ return {
 				"gitignore",
 				"markdown",
 				"markdown_inline",
+				"vue",
 			},
 			highlight = {
 				enable = true,

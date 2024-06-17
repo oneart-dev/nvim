@@ -9,6 +9,10 @@ return {
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
+		local mason_registry = require("mason-registry")
+		local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+			.. "/node_modules/@vue/language-server"
+
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -97,40 +101,48 @@ return {
 		})
 
 		-- configure volar (vue) server
-		lspconfig["volar"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "vue" },
-			init_options = {
-				typescript = {
-					tsdk = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
-				},
-				preferences = {
-					disableSuggestions = true,
-				},
-				languageFeatures = {
-					implementation = true,
-					references = true,
-					definition = true,
-					typeDefinition = true,
-					callHierarchy = true,
-					hover = true,
-					rename = true,
-					renameFileRefactoring = true,
-					signatureHelp = true,
-					codeAction = true,
-					workspaceSymbol = true,
-					diagnostics = true,
-					semanticTokens = true,
-					completion = {
-						defaultTagNameCase = "both",
-						defaultAttrNameCase = "kebabCase",
-						getDocumentNameCasesRequest = false,
-						getDocumentSelectionRequest = false,
-					},
-				},
-			},
-		})
+		lspconfig["volar"].setup({})
+		-- lspconfig["volar"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "vue" },
+		-- 	init_options = {
+		-- 		plugins = {
+		-- 			{
+		-- 				name = "@vue/typescript-plugin",
+		-- 				location = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/",
+		-- 				languages = { "vue" },
+		-- 			},
+		-- 		},
+		-- 		typescript = {
+		-- 			tsdk = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+		-- 		},
+		-- 		-- preferences = {
+		-- 		-- 	disableSuggestions = true,
+		-- 		-- },
+		-- 		-- languageFeatures = {
+		-- 		-- 	implementation = true,
+		-- 		-- 	references = true,
+		-- 		-- 	definition = true,
+		-- 		-- 	typeDefinition = true,
+		-- 		-- 	callHierarchy = true,
+		-- 		-- 	hover = true,
+		-- 		-- 	rename = true,
+		-- 		-- 	renameFileRefactoring = true,
+		-- 		-- 	signatureHelp = true,
+		-- 		-- 	codeAction = true,
+		-- 		-- 	workspaceSymbol = true,
+		-- 		-- 	diagnostics = true,
+		-- 		-- 	semanticTokens = true,
+		-- 		-- 	completion = {
+		-- 		-- 		defaultTagNameCase = "both",
+		-- 		-- 		defaultAttrNameCase = "kebabCase",
+		-- 		-- 		getDocumentNameCasesRequest = false,
+		-- 		-- 		getDocumentSelectionRequest = false,
+		-- 		-- 	},
+		-- 		-- },
+		-- 	},
+		-- })
 
 		-- configure html server
 		lspconfig["html"].setup({
@@ -140,8 +152,23 @@ return {
 
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
+			path = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
 			capabilities = capabilities,
 			on_attach = on_attach,
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vue_language_server_path,
+						languages = { "vue", "typescript", "javascript" },
+					},
+				},
+				tsserver = {
+					-- This overwrite the path from the local project, in case your project ts version is not compatible with the plugin
+					path = "/Users/oneart/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+				},
+			},
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			-- filetypes = { "javascript", "vue", "typescriptreact", "javascriptreact" },
 		})
 
